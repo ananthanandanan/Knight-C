@@ -10,7 +10,7 @@ Also helps the agency to manage feedback reports, control the accommodations inf
 
 **Client:** Tinkter
 
-**Server:** Python, SQLlit3
+**Server:** Python, SQlite3
 
 
 ## Contributors
