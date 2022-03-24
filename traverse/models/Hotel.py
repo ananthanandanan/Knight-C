@@ -1,6 +1,6 @@
 
-from models.Package import Package
-import statistics
+from Package import Package
+
 
 
 class Hotel():

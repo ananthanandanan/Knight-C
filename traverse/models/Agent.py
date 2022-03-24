@@ -1,5 +1,5 @@
 
-from models.Employee import Employee
+from Employee import Employee
 
 
 class Agent(Employee):

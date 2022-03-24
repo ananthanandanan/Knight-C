@@ -1,7 +1,5 @@
 from typing import List
-from models.User import User
-
-
+from User import User
 
 class Employee(User):
     

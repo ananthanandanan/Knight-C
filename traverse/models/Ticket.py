@@ -1,4 +1,4 @@
-from models.Package import Package
+from Package import Package
 
 class Ticket():
     

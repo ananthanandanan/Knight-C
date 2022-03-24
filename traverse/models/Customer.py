@@ -1,8 +1,8 @@
 
 
-from models.Package import Package
+from Package import Package
 from typing import List
-from models.User import User
+from User import User
 
 
 class Customer(User):

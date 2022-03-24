@@ -1,7 +1,7 @@
-from models.Agent import Agent
-from models.Customer import Customer
-from models.Hotel import Hotel
-from models.Ticket import Ticket
+from Agent import Agent
+from Customer import Customer
+from Hotel import Hotel
+from Ticket import Ticket
 
 
 class Package():

@@ -1,6 +1,6 @@
 
 
-from models.Customer import Customer
+from Customer import Customer
 
 
 class Payment():

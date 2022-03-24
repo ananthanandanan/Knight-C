@@ -1,5 +1,4 @@
-
-from models.Employee import Employee
+from Employee import Employee
 
 
 class Manager(Employee):
@@ -39,3 +38,7 @@ class Manager(Employee):
         return self.manager_id
     def get_manager(self):
         return self.get_Employee() + [self.manager_id]
+    
+
+man = Manager("Ron",'2001-08-21', "12938272")
+print(man.name)
