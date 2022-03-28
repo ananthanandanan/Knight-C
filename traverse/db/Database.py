@@ -138,9 +138,4 @@ class Database:
     #         .format(USERS, id=3)
     #     self.execute_query(query)
     #     self.print_all_data(USERS)
-            
 
-
-# dbms = Database(SQLITE, dbname='mydb.sqlite')
-# dbms.create_db_tables()
-# dbms.sample_insert() # insert data

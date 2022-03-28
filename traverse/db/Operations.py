@@ -1,5 +1,7 @@
-from tables import User, Employee, Customer, Admin, Manager, Agent, Payment
-from tables.Employee import Employee
+from tables import (User, Employee, Customer, 
+                    Admin, Manager, Agent,
+                    Payment, Package,
+                    Hotel, Ticket)
 from tables.base import Base
 import datetime
 from Database import Database
