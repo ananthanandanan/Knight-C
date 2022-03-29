@@ -18,7 +18,7 @@ passwprd_label.place(x = 50, y = 50)
 password = Entry(Login_label, width = 70)
 password.place(x = 150, y = 50, width = 200)
  
-submitbtn = Button(Login_label, text ="Log In",)
+submitbtn = Button(Login_label, text ="Log In")
 submitbtn.place(x = 150, y = 135, width = 155)
  
 root.mainloop()
