@@ -1,36 +1,47 @@
-from cgitb import text
+from calendar import *
 from tkinter import *
+# from PIL import Image, ImageTk
+import sqlite3
+class Register:
+    def __init__(self):
+        self.register_screen = Tk()
+        self.register_screen.title("Register")
+        self.register_screen.geometry("500x500")
+        self.register_screen.config(bg="pink")
+        # bg_image = Image.open("../images/background.png")
+        # bg_image_resize = bg_image.resize((500,500))
+        # bg_image_test = ImageTk.PhotoImage(bg_image_resize)
+        # Label(self.register_screen, image= bg_image_test).place(x=0, y=0, relheight=1, relwidth=1)
+        Label(self.register_screen, text="Please enter details below", bg="pink").pack()
+        Label(self.register_screen, text="", bg="pink").pack()
+        Label(self.register_screen, text="Full name", bg="pink").place(x=120,y=40)
+        name = Entry(self.register_screen)
+        name.place(x=220,y=40)
+        Label(self.register_screen, text="Date of Birth", bg="pink").place(x=120,y=80)
+        dob = Entry(self.register_screen)
+        dob.place(x=220,y=80)
+        Button(self.register_screen, text="cal", width=1,height=1, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white").place(x=370,y=76)
+        Label(self.register_screen, text="Phone No.", bg="pink").place(x=120,y=120)
+        phno = Entry(self.register_screen)
+        phno.place(x=220,y=120)
+        Label(self.register_screen, text="address", bg="pink").place(x=120,y=160)
+        address = Entry(self.register_screen)
+        address.place(x=220,y=160)
+        Label(self.register_screen, text="Email", bg="pink").place(x=120,y=200)
+        email = Entry(self.register_screen)
+        email.place(x=220,y=200)
+        Label(self.register_screen, text="Username", bg="pink").place(x=120,y=240)
+        username = Entry(self.register_screen)
+        username.place(x=220,y=240)
+        Label(self.register_screen, text="Password", bg="pink").place(x=120,y=280)
+        password = Entry(self.register_screen, show="*")
+        password.place(x=220,y=280)
+        Label(self.register_screen, text="Age", bg="pink").place(x=120,y=320)
+        age = Entry(self.register_screen)
+        age.place(x=220,y=320)
+        Button(self.register_screen, text="Back", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command= self.register_screen.destroy).place(x=70,y=370)
+        Button(self.register_screen, text="Register", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command= lambda: print(name.get())).place(x=350,y=370)
+        self.register_screen.mainloop()
 
-root = Tk()
-root.title("Traverse")
-root.geometry("400x400")
-Login_label = LabelFrame(root,text="Register",padx=150,pady=50).pack(fill="both",expand="yes")
-
-full_label= Label(Login_label, text ="Fullname  ", )
-full_label.place(x = 50, y = 20)
- 
-fullname = Entry(Login_label,width=35)
-fullname.place(x = 150, y = 20, width = 200)
-
-email_label= Label(Login_label, text ="Email  ", )
-email_label.place(x = 50, y = 60)
- 
-email = Entry(Login_label,width=35)
-email.place(x = 150, y = 60, width = 200)
-
-username_label= Label(Login_label, text ="Username  ", )
-username_label.place(x = 50, y = 100)
- 
-Username = Entry(Login_label,width=35)
-Username.place(x = 150, y = 100, width = 200)
-  
-passwprd_label= Label(Login_label, text ="Password  ")
-passwprd_label.place(x = 50, y = 140)
- 
-password = Entry(Login_label, width = 70)
-password.place(x = 150, y = 140, width = 200)
- 
-submitbtn = Button(Login_label, text ="Register",)
-submitbtn.place(x = 150, y = 180, width = 155)
- 
-root.mainloop()
+    def register_user(self):
+        pass
