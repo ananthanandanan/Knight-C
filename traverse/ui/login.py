@@ -1,24 +1,21 @@
-
-from cgitb import text
 from tkinter import *
-
-
-root = Tk()
-root.geometry("400x400")
-Login_label = LabelFrame(root,text="Log In",padx=150,pady=50).pack(fill="both",expand="yes")
-username_label= Label(Login_label, text ="Username -", )
-username_label.place(x = 50, y = 20)
- 
-Username = Entry(Login_label,width=35)
-Username.place(x = 150, y = 20, width = 200)
-  
-passwprd_label= Label(Login_label, text ="Password -")
-passwprd_label.place(x = 50, y = 50)
- 
-password = Entry(Login_label, width = 70)
-password.place(x = 150, y = 50, width = 200)
- 
-submitbtn = Button(Login_label, text ="Log In")
-submitbtn.place(x = 150, y = 135, width = 155)
- 
-root.mainloop()
+# from PIL import Image, ImageTk
+class Login:
+    def __init__(self):
+        self.login_screen = Tk()
+        self.login_screen.title("Login")
+        self.login_screen.geometry("400x400")
+        self.login_screen.config(bg="pink")
+        # bg_image = Image.open("../images/background.png")
+        # bg_image_resize = bg_image.resize((400,400))
+        # bg_image_test = ImageTk.PhotoImage(bg_image_resize)
+        # Label(self.login_screen, image= bg_image_test).place(x=0, y=0, relheight=1, relwidth=1)
+        Label(self.login_screen, text="Username", bg="pink").place(x=80,y=100)
+        username = Entry(self.login_screen)
+        username.place(x=180,y=100)
+        Label(self.login_screen, text="Password", bg="pink").place(x=80,y=140)
+        password = Entry(self.login_screen, show="*")
+        password.place(x=180,y=140)
+        Button(self.login_screen, text="Back", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command= self.login_screen.destroy).place(x=70,y=200)
+        Button(self.login_screen, text="Login", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white").place(x=260,y=200)
+        self.login_screen.mainloop()
