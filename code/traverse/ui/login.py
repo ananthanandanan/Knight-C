@@ -1,8 +1,9 @@
 from tkinter import *
 # from PIL import Image, ImageTk
 class Login:
-    def __init__(self):
+    def __init__(self, session):
         self.login_screen = Tk()
+        self.session = session
         self.login_screen.title("Login")
         self.login_screen.geometry("400x400")
         self.login_screen.config(bg="pink")

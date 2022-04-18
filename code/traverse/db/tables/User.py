@@ -9,7 +9,7 @@ class User(Base):
     
     id = Column(Integer, primary_key=True, autoincrement="auto")
     name = Column(String(30), nullable=False)
-    dob = Column(Date, nullable=False)
+    dob = Column(String(10), nullable=False)
     phno = Column(Integer, nullable=False)
     address = Column(String(50), nullable=True)
     email = Column(String(20), nullable=False, unique=True)
