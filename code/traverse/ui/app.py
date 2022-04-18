@@ -22,7 +22,7 @@ class App:
         
         self.main_screen = Tk()
         self.session = session
-        self.main_screen.geometry("400x300")
+        self.main_screen.geometry("800x800")
         self.main_screen.title("Traverse")
         self.main_screen.resizable(False,False)
         bg_image = Image.open("traverse/images/background.png")

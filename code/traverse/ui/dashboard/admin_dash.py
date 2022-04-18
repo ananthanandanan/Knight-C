@@ -1,14 +1,15 @@
 from tkinter import *
 from turtle import back, color
-from customer import Customer
-from manager import Manager
-from agent import Agent
-from package import Package
+from .customer import Customer
+from .manager import Manager
+from .agent import Agent
+from .package import Package
 from PIL import ImageTk, Image
 
 class Admin_dash:
-    def __init__(self):
+    def __init__(self, session):
         self.admin_screen = Tk()
+        self.session = session
         self.admin_screen.title("Admin Dashboard")
         self.admin_screen.geometry("800x600")
         top_label = Label(text="Dashboard", background="black", height=3, width=125, fg="#f7e328", font='Verdana 10 bold')
@@ -98,4 +99,4 @@ class Admin_dash:
         self.payment_screen.mainloop()
 
 
-admin = Admin_dash()
+# admin = Admin_dash()

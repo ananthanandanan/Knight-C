@@ -1,4 +1,6 @@
 from tkinter import *
+from traverse.ui.dashboard.admin_dash import Admin_dash
+from traverse.db.tables.User import User
 # from PIL import Image, ImageTk
 class Login:
     def __init__(self, session):
@@ -18,5 +20,16 @@ class Login:
         self.password = Entry(self.login_screen, show="*")
         self.password.place(x=180,y=140)
         Button(self.login_screen, text="Back", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command= self.login_screen.destroy).place(x=70,y=200)
-        Button(self.login_screen, text="Login", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white").place(x=260,y=200)
+        Button(self.login_screen, text="Login", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command=self.login_user).place(x=260,y=200)
         self.login_screen.mainloop()
+        
+    def login_user(self):
+        result = self.session.query(User).filter_by(username=self.username.get(),
+                                                    password=self.password.get()).one_or_none()
+        if result is not None:
+            self.login_screen.destroy()
+            Admin_dash(self.session)
+        else:
+            print("Not such user")
+            
+        
