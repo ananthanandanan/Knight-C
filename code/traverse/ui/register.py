@@ -67,6 +67,6 @@ class Register:
     def register_user(self):
         u = User.User(name=self.name.get(), dob=self.dob.get(), phno=self.phno.get(), address=self.address.get(),
                 email=self.email.get(), username=self.username.get(), password=self.password.get(),
-                age=self.age.get())
+                age=self.age.get(), role=self.role.get())
         self.session.add(u)
         self.session.commit()

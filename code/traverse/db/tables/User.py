@@ -16,6 +16,7 @@ class User(Base):
     username = Column(String(25), nullable=False, unique=True)
     password = Column(String(60), nullable=False)
     age = Column(Integer, nullable=False)
+    role = Column(String(20), nullable=True)
     
     def __repr__(self) -> str:
         return f"username={self.username} email={self.email} dob={self.dob}"
