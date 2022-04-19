@@ -50,9 +50,18 @@ class Register:
         Label(self.register_screen, text="Age", bg="pink").place(x=120,y=320)
         self.age = Entry(self.register_screen)
         self.age.place(x=220,y=320)
-        
-        Button(self.register_screen, text="Back", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command= self.register_screen.destroy).place(x=70,y=370)
-        Button(self.register_screen, text="Register", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command= self.register_user).place(x=350,y=370)
+
+        Label(self.register_screen, text="Role", bg="pink").place(x=120,y=350)
+        self.role = StringVar(self.register_screen)
+        customer = Radiobutton(self.register_screen,text="Customer", variable=self.role, value="customer", background = "pink")
+        customer.place(x=220,y=350)
+        manager = Radiobutton(self.register_screen,text="Manager", variable=self.role, value="manager", background = "pink")
+        manager.place(x=300,y=350)
+        agent = Radiobutton(self.register_screen,text="Agent", variable=self.role, value="agent", background = "pink")
+        agent.place(x=370,y=350)
+
+        Button(self.register_screen, text="Back", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command= self.register_screen.destroy).place(x=70,y=390)
+        Button(self.register_screen, text="Register", width=10,height=2, bg="#fa7a1e", fg="white", activebackground="#f28333", activeforeground="white", command= self.register_user).place(x=350,y=390)
         self.register_screen.mainloop()
 
     def register_user(self):
