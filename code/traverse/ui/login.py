@@ -1,6 +1,7 @@
 from tkinter import *
 from traverse.ui.dashboard.admin_dash import Admin_dash
 from traverse.db.tables.User import User
+from tkinter import messagebox
 # from PIL import Image, ImageTk
 class Login:
     def __init__(self, session):
@@ -30,6 +31,7 @@ class Login:
             self.login_screen.destroy()
             Admin_dash(self.session)
         else:
-            print("Not such user")
+            messagebox.showwarning("Warning", "No such user!")
+
             
         
