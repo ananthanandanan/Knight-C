@@ -20,7 +20,7 @@ class Admin_dash:
         frame1.bind('<Button-1>', self.customer_button)
         frame1.grid(row=1, column=1, padx=5, pady=5)
         frame1.pack_propagate(0)
-        img = Image.open("/home/akshay/Knight-C/code/traverse/images/Customer.png")
+        img = Image.open("traverse/images/Customer.png")
         customer_image = img.resize((200,200))
         customer_image_test = ImageTk.PhotoImage(customer_image)
         label = Label(frame1, image = customer_image_test)
@@ -34,7 +34,7 @@ class Admin_dash:
         frame2.bind('<Button-1>', self.manager_button)
         frame2.grid(row=1, column=2, padx=5, pady=5)
         frame2.pack_propagate(0)
-        img = Image.open("/home/akshay/Knight-C/code/traverse/images/manager.png")
+        img = Image.open("traverse/images/manager.png")
         manager_image = img.resize((200,200))
         manager_image_test = ImageTk.PhotoImage(manager_image)
         label = Label(frame2, image = manager_image_test)
@@ -48,7 +48,7 @@ class Admin_dash:
         frame3.bind('<Button-1>', self.agent_button)
         frame3.grid(row=2, column=1, padx=5, pady=5)
         frame3.pack_propagate(0)
-        img = Image.open("/home/akshay/Knight-C/code/traverse/images/agent.png")
+        img = Image.open("traverse/images/agent.png")
         agent_image = img.resize((200,200))
         agent_image_test = ImageTk.PhotoImage(agent_image)
         label = Label(frame3, image = agent_image_test)
@@ -62,7 +62,7 @@ class Admin_dash:
         frame4.bind('<Button-1>', self.package_button)
         frame4.grid(row=2, column=2, padx=5, pady=5)
         frame4.pack_propagate(0)
-        img = Image.open("/home/akshay/Knight-C/code/traverse/images/package.png")
+        img = Image.open("traverse/images/package.png")
         package_image = img.resize((200,200))
         package_image_test = ImageTk.PhotoImage(package_image)
         label = Label(frame4, image = package_image_test)
@@ -73,19 +73,19 @@ class Admin_dash:
 
     def customer_button(self,event):
         # self.admin_screen.destroy()
-        Customer()
+        Customer(self.session)
     
     def manager_button(self,event):
         # self.admin_screen.destroy()
-        Manager()
+        Manager(self.session)
 
     def agent_button(self,event):
         # self.admin_screen.destroy()
-        Agent()
+        Agent(self.session)
 
     def package_button(self,event):
         # self.admin_screen.destroy()
-        Package()
+        Package(self.session)
 
 
 # session = 1

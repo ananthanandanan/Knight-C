@@ -1,9 +1,10 @@
 from tkinter import *
 from tkinter import ttk
-
+from traverse.db.tables.Employee import Employee as emp
 class Manager:
-    def __init__(self):
+    def __init__(self, session):
         self.manager_screen = Tk()
+        self.session = session
         self.manager_screen.title("manager Dashboard")
         self.manager_screen.geometry("1090x600")
         self.container_tree = Frame(self.manager_screen, width=100, height=100)
@@ -32,8 +33,11 @@ class Manager:
         self.manager_tree.column("designation", width=100) 
         self.manager_tree.column("doj", width=80)
         contacts = []
-        for n in range(1, 30):
-            contacts.append(('Akshay is the name', '13-02-1994','7939302837', 'Near Paris Railway Station', 'something@gmail.com', 'purposeoflife', 'hidden-password', '49', 'designation', '04-12-2004'))
+        result = session.query(emp).filter(emp.designation=="manager").all()
+        for row in result:
+            u = row.user
+            contacts.append((u.name, u.dob, u.phno, u.address, u.email, u.username, 
+                            u.password, u.age, row.designation, row.doj))
         for contact in contacts:
             self.manager_tree.insert('', END, values=contact)
         self.manager_tree.grid(row=0, column=0, sticky='nsew')
